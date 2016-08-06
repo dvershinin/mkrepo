@@ -3,6 +3,7 @@
 set -xeuo pipefail
 
 NGINX_VERSION="1.10.1"
+NGINX_EPOCH=1
 NJS_SHAID="1c50334fbea6"
 
 MODSEC_VERSION="2.9.1"
@@ -125,7 +126,7 @@ fpm -s dir -t rpm -n nginx-module-modsecurity \
     --vendor "$VENDOR" --maintainer "$MAINTAINER" --rpm-summary "$SUMMARY" --description "$DESCRIPTION" --url "$URI" \
     -v "$VERSION" \
     --iteration "$ITERATION" \
-    --depends "nginx = ${NGINX_VERSION}" \
+    --depends "nginx = ${NGINX_EPOCH}:${NGINX_VERSION}" \
     --depends apr \
     --depends apr-util \
     --depends yajl \
