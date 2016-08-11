@@ -28,11 +28,13 @@ yum install -y \
 
 cd /opt/
 
-git clone https://github.com/SpiderLabs/ModSecurity
+git clone https://github.com/mkubenka/ModSecurity
 
 cd /opt/ModSecurity
 
-git checkout v${MODSEC_VERSION}
+# Temporarily fix for https://github.com/SpiderLabs/ModSecurity/issues/582
+#git checkout v${MODSEC_VERSION}
+git checkout nginx_refactoring_mkubenka
 
 ./autogen.sh
 
