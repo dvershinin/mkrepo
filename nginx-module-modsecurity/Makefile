@@ -1,5 +1,7 @@
 all: build
 
+export ITERATION := $(shell git log --oneline . 2>/dev/null | awk 'END {print NR}')
+
 build:
 	docker run \
 		--rm \
