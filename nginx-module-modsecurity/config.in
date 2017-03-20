@@ -14,7 +14,8 @@ CFLAGS="$CFLAGS \
 ngx_feature_incs="$ngx_addon_dir \
     $ngx_addon_dir/../../standalone \
     $ngx_addon_dir/../../apache2"
-ngx_feature_libs="@APR_LINKLD@ \
+ngx_feature_libs="$ngx_addon_dir/../../standalone/.libs/standalone.a \
+    @APR_LINKLD@ \
     @APU_LINKLD@ \
     @APXS_CFLAGS@ \
     @CURL_LDADD@ \
@@ -23,8 +24,7 @@ ngx_feature_libs="@APR_LINKLD@ \
     @PCRE_LDADD@ \
     @APXS_LIBS@ \
     @YAJL_LIBS@ \
-    @SSDEEP_LDFLAGS@ \
-    $ngx_addon_dir/../../standalone/.libs/standalone.a"
+    @SSDEEP_LDFLAGS@"
 
 ngx_modsecurity_opt_L=
 
